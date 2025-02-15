@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import Navbar from './components/Navbar';
+import HomeSection from './components/HomeSection';
 import CourseList from './components/CourseList';
 import CourseDetails from './components/CourseDetails';
 import Dashboard from './components/Dashboard';
@@ -53,7 +54,8 @@ function App() {
             <Navbar mode={mode} setMode={setMode} />
             <main style={{ flex: 1 }}>
               <Routes>
-                <Route path="/" element={<CourseList />} />
+                <Route index element={<Navigate to="/home" />} />
+                <Route path="/home" element={<CourseList />} />
                 <Route path="/course/:id" element={<CourseDetails />} />
                 <Route path="/dashboard" element={<Dashboard />} />
               </Routes>

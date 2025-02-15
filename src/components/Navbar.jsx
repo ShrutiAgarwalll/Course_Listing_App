@@ -97,7 +97,7 @@ function Navbar({ mode, setMode }) {
           transition={{ duration: 0.5 }}
           sx={{ flexGrow: 1 }}
         >
-          Course Platform
+          Course Listing App
         </Typography>
 
         {isMobile ? (
